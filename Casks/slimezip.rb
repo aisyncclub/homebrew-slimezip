@@ -14,7 +14,10 @@ cask "slimezip" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  # The bare symbol means "this version or newer". The  string
+  # form is deprecated and brew prints the warning once per resolution pass —
+  # four times on a plain install.
+  depends_on macos: :sonoma
 
   app "SlimeZIP.app"
 
